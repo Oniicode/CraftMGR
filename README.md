@@ -23,7 +23,7 @@ The Open-Source Minecraft game server management solution.
 ![Realtime console view](screenshots/server_console.png)
 ![Coming soon: Web based file and text viewer/editor](screenshots/server_files.png)
 
-### Setup
+## Setup
 1) Build or get CraftMGR.jar
 2) Optional: For additional security, create system user to run it with. ```adduser minecraft```
 3) Place CraftMGR.jar into desired directory on your server. e.G. on linux ```/home/minecraft```
@@ -32,7 +32,7 @@ The Open-Source Minecraft game server management solution.
 Default password is: ```imnotgerman```
 6) Enjoy
 
-### Runtime
+### Dependencies
 
 Runtime:
 - Java 8
@@ -50,7 +50,9 @@ Build:
 
 ## TODOs & planned features:
 - Command line interface translation (very sorryy for lack of this!)
-- Password change trough UI
-- HTTPS Support
+- Code comments translation (again, very sorry.)
+- Password change option in web UI
+- HTTPS support
+- FTP support
 - Multi-user support
 - Documentation
