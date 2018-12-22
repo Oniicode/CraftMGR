@@ -1,0 +1,65 @@
+/* Login */
+passwd=Password
+passwd_worng=Password incorrect
+login=Login
+logout=Logout
+
+/* Main View */
+btn_addserver=Create server
+server_port=Port
+server_status=Status
+server_desc=Description
+server_template=Template
+server_ram_input=RAM (in MB)
+server_btn_create_confirm=Create
+server_autostart=Auto start
+js_required=This web interface requires JavaScript.
+
+/* Notifications (ALL IN JS STRING FORMAT) */
+error_pls_refresh='An error occured. Please refresh the page.'
+server_cmd_fail='Error: Couldn\'t send command to Server #'+id
+server_start='Starting server #'+id+' ...'
+server_start_fail='Couldn\'t start Server #'+id
+server_start_success='Server #'+id+' started.'
+server_stop='Shutting down Server #'+id+' ...'
+server_stop_fail='Error: Couldn\'t shut down Server #'+id+''
+server_kill_success='Server #'+id+' has been killed.'
+server_kill_fail='Error: Couldn\'t kill Server #'+id+'.'
+server_del_success='Server #'+id+' deleted.'
+server_del_fail='Error: Couldn\'t delete #'+id+''
+server_create='Creating server "'+name+'". This may take a while..'
+server_create_success='Successfully created server "'+name+'"!'
+server_backup_apply_success='Success: Backup "'+desc+'" on Server #'+id+' installed.'
+server_backup_apply_fail='Error: Couldn\'t install backup "'+desc+'" on Server #'+id+''
+server_backup_delete_success='Backup "'+desc+'" deleted.'
+server_backup_delete_fail='Error: Couldn\'t delete backup "'+desc+'" of Server #'+id+''
+server_mkbackup='Backing up server #'+id+'. This may take a while..'
+server_mkbackup_success='Backup completed.'
+server_mkbackup_fail='Error: Couldn\'t backup server #'+id+'.'
+
+/* Console */
+c_server_starting=Starting server . . .
+c_server_exited=Server exited (%s)
+
+/* Single View */
+tab_console=Console
+tab_conf=Config
+tab_files=Files
+tab_backup=Backups
+
+c_cmd=Command
+c_cmd_send=Execute
+c_empty=Console empty
+
+conf_apply=Apply
+
+f_name=Name
+f_date=Date
+f_type=Type
+f_size=Size
+
+backups_add=Create Backup
+backups_date=Date
+backups_size=Size
+backups_desc=Description
+backups_apply=Apply

@@ -1,0 +1,110 @@
+<div class="container" style="max-width: 1000px;">
+	<br>
+	<nav class="navbar navbar-light bg-light" style="border-radius: 0.25rem;">
+		<button class="btn btn-primary" data-toggle="modal" data-target="#create">{lang:btn_addserver}</button>
+		<a class="navbar-brand" href="#">{app} {ver}</a>
+		<a href="?logout=666" class="btn btn-light">{lang:logout}</a>
+	</nav>
+	<div class="modal fade" id="create" tabindex="-1" role="dialog" aria-labelledby="lbl_create" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="lbl_create">{lang:btn_addserver}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-sm-9">
+							<label for="cname">{lang:server_desc}</label>
+							<input id="cname" type="text" class="form-control" placeholder="<<SERVER_NAME_HERE>>"/>
+						</div> 
+						<div class="col-sm-3">
+							<label for="cport">{lang:server_port}</label>
+							<input id="cport" type="number" class="form-control" value="25001"/>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-4">
+							<label for="cversion">{lang:server_template}</label>
+							<select id="cversion" class="form-control">
+								<TEMPLATES/>
+							</select>
+						</div>
+						<div class="col-sm-2">
+							<label for="cram">{lang:server_ram_input}</label>
+							<input id="cram" value="1048" type="number" class="form-control" />
+						</div>
+						<div class="col-sm-2">
+							<label>&nbsp;</label>
+							<div class="form-check">
+								<input class="form-check-input" id="cautostart" type="checkbox" name="cautostart" value="true" />
+								<label class="form-check-label" for="cautostart">
+							    {lang:server_autostart}
+								</label>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<label>&nbsp;</label>
+							<button data-dismiss="modal" id="btn-createserver" name="btn-createserver" class="btn btn-block btn-primary pull-right">{lang:server_btn_create_confirm}</button>
+						</div>
+					</div>
+					<div class="row">
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="row">
+		<div class="col-lg-12">
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead class="thead-light">
+						<tr>
+							<td>#</td>
+							<td>{lang:server_port}</td>
+							<td>{lang:server_status}</td>
+							<td>{lang:server_desc}</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody id="serverlist" class="">
+						<noscript>{lang:js_required}</noscript>
+						<!--
+						<tr>
+							<td>1</td>
+							<td>25001</td>
+							<td><span class="badge badge-pill badge-light">OFFLINE</span></td>
+							<td>Testservereintrag 1</td>
+							<td><button class="btn btn-sm btn-outline-primary" style="margin-right: .5em;"><i class="fa fa-play" aria-hidden="true"></i> Start</button><button class="btn btn-sm btn-outline-secondary" style="margin-right: .5em;"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button><button class="btn btn-sm btn-outline-secondary" style="height: 31px; margin-top: 1px;"><i class="fa fa-terminal" aria-hidden="true"></i></button></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td>25002</td>
+							<td><span class="badge badge-pill badge-light">ONLINE</span></td>
+							<td>Testservereintrag 2</td>
+							<td><button class="btn btn-sm btn-outline-primary" style="margin-right: .5em;"><i class="fa fa-stop" aria-hidden="true"></i> Stop</button><button class="btn btn-sm btn-outline-secondary" style="margin-right: .5em;"><i class="fa fa-bolt" aria-hidden="true"></i> Force Stop</button><button class="btn btn-sm btn-outline-secondary" style="height: 31px; margin-top: 1px;"><i class="fa fa-terminal" aria-hidden="true"></i></button></td>
+						</tr>-->
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/assets/dargen-mgmt.js"></script>
+<script>
+document.getElementById("serverlist").innerHTML = "";
+refresh_list();
+setInterval(function() {
+	refresh_list();
+}, 2000);
+
+document.getElementById('btn-createserver').onclick = function(){
+	server_create(document.getElementById('cport').value, document.getElementById('cname').value, document.getElementById('cram').value, document.getElementById('cversion').value, document.getElementById('cautostart').checked);
+	document.getElementById('cname').value = "";
+	refresh_list();
+};
+</script>

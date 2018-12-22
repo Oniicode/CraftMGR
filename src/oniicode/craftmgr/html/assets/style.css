@@ -1,0 +1,9 @@
+.console {
+	background-color: black;
+	color: #bcbbbb;
+	height: 600px;
+	overflow-y: scroll;
+	font-family: "Courier New", Consolas, Arial;
+	font-size: 13;
+	line-height: 16px;
+}

@@ -1,0 +1,25 @@
+<div class="container">
+	<form class="form-horizontal" method="POST">
+		<div class="row">
+			<br>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<input class="form-control" placeholder="{lang:passwd}..." type="password" name="{loginformid}" required/>
+				<p id="wrongpasswd">{wrongpasswd}</p>
+				<script>
+				setTimeout(function() {
+					document.getElementById('wrongpasswd').innerHTML = "";
+				}, 3500);
+				</script>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-3"></div>
+			<div class="col-md-6">
+				<button class="btn btn-primary"><i class="fa fa-sign-in" aria-hidden="true"></i> {lang:login}</button>
+			</div>
+		</div>
+	</form>
+</div>

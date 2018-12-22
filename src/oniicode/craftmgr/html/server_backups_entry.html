@@ -1,0 +1,10 @@
+<tr>
+	<td><i class="fa fa-archive" aria-hidden="true"></i></td>
+	<td>{DATE}</td>
+	<td>{SIZE}</td>
+	<td>{NAME}</td>
+	<td>
+		<button onclick="server_backup_apply({S_ID}, '{NAME}');" class="btn btn-sm btn-outline-primary" style="margin-right: .5em;"><i class="fa fa-upload" aria-hidden="true"></i> {lang:backups_apply}</button>
+		<button onclick="server_backup_delete({S_ID}, '{NAME}');" class="btn btn-sm btn-outline-secondary" style="margin-right: .5em;"><i class="fa fa-trash" aria-hidden="true"></i> Delete</button>
+	</td>
+</tr>

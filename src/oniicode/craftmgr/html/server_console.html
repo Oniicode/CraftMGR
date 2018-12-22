@@ -1,0 +1,70 @@
+<div class="container" style="max-width: 1000px;">
+	<br>
+	<nav class="navbar navbar-light bg-light" style="border-radius: 0.25rem;">
+		<noscript>
+			<a href="/" class="btn btn-light"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+		</noscript>
+		<div id="btns">
+			
+		</div>
+		<a class="navbar-brand" href="#">Server #{S_ID} <span id="sstatus" class="badge badge-pill badge-light">{S_STATE}</span></a>
+		<a href="?logout=999" class="btn btn-light">{lang:logout}</a>
+	</nav>
+	<br>
+	<div class="card">
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs">
+				<li class="nav-item"> 
+					<a class="nav-link active" href="?server={S_ID}"><i class="fa fa-terminal" aria-hidden="true"></i> {lang:tab_console}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&config=0"><i class="fa fa-wrench" aria-hidden="true"></i> {lang:tab_conf}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&files"><i class="fa fa-folder-open" aria-hidden="true"></i> {lang:tab_files}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&backups"><i class="fa fa-archive" aria-hidden="true"></i> {lang:tab_backup}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="card-body">
+			<div id="console" class="console">
+			
+			</div>
+			<br>
+			
+			<div class="input-group">
+				<input id="command" type="text" class="form-control" placeholder="{lang:c_cmd}">
+				<div class="input-group-append">
+					<button id="btn-command" class="btn btn-primary" type="button">{lang:c_cmd_send}</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/assets/dargen-mgmt.js"></script>
+<script>
+serverview_refresh({S_ID});
+setInterval(function() {
+	serverview_refresh({S_ID});
+}, 1000);
+
+refresh_console({S_ID});
+setInterval(function() {
+	refresh_console({S_ID});
+}, 1000);
+
+document.getElementById('btn-command').onclick = function(){
+	server_command({S_ID}, document.getElementById('command').value);
+	document.getElementById('command').value = "";
+};
+
+document.getElementById("command")
+.addEventListener("keyup", function(event) {
+event.preventDefault(); 
+if (event.keyCode === 13) {
+    document.getElementById("btn-command").click();
+}
+});
+</script>

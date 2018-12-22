@@ -1,0 +1,59 @@
+/* Login */
+passwd=Passwort
+passwd_worng=Falsches Passwort
+login=Login
+logout=Abmelden
+
+/* Main View */
+btn_addserver=Server erstellen
+server_desc=Beschreibung
+server_template=Vorlage
+server_btn_create_confirm=Erstellen
+server_autostart=Autostart
+js_required=Diese Weboberfläche benötigt JavaScript um zu funktionieren.
+
+/* Notifications (ALL IN JS STRING FORMAT) */
+error_pls_refresh='Ein Fehler ist aufgetreten, bitte Seite neu laden'
+server_cmd_fail='Fehler beim Senden des Befehls an Server #'+id
+server_start='Server #'+id+' wird gestartet...'
+server_start_fail='Fehler beim Starten von Server #'+id
+server_start_success='Server #'+id+' wurde gestartet'
+server_stop='Server #'+id+' wird heruntergefahren.'
+server_stop_fail='Fehler beim Herunterfahren von Server #'+id+''
+server_kill_success='Server #'+id+' wurde zwangsheruntergefahren.'
+server_kill_fail='Fehler beim Zwangsherunterfahren von Server #'+id+'.'
+server_del_success='Server #'+id+' wurde gelöscht.'
+server_del_fail='Fehler beim Löschen von Server #'+id+''
+server_create='Server "'+name+'" wird erstellt. Bitte einen Moment Geduld...'
+server_create_success='Server "'+name+'" wurde erfolgreich erstellt!'
+server_backup_apply_success='Backup "'+desc+'" wurde erfolgreich auf Server #'+id+' aufgespielt.'
+server_backup_apply_fail='Fehler beim Aufspielen des Backups "'+desc+'" auf Server #'+id+''
+server_backup_delete_success='Backup "'+desc+'" wurde gelöscht.'
+server_backup_delete_fail='Fehler beim Löschen des Backups "'+desc+'" von Server #'+id+''
+server_mkbackup='Backup von Server #'+id+' wird erstellt. Bitte einen Moment Geduld...'
+server_mkbackup_success='Backup wurde erfolgreich erstellt.'
+server_mkbackup_fail='Beim Erstellen des Backups von Server #'+id+' ist ein Fehler aufgetreten.'
+
+/* Console */
+c_server_starting=Server wird gestartet . . .
+c_server_exited=Server Heruntergefahren (%s)
+
+/* Single View */
+tab_console=Konsole
+tab_conf=Einstellungen
+tab_files=Dateien
+
+c_cmd_send=Senden
+c_empty=Konsole leer
+
+conf_apply=Übernehmen
+
+f_date=Änderungsdatum
+f_type=Typ
+f_size=Größe
+
+backups_add=Backup erstellen
+backups_date=Datup
+backups_size=Größe
+backups_desc=Beschreibung
+backups_apply=Aufspielen

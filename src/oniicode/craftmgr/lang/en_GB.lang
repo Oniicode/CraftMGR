@@ -1,0 +1,33 @@
+/* Login */
+passwd=Password
+passwd_worng=Password Incorrect
+login=Login
+logout=Logout
+
+/* Main View */
+btn_addserver=Create server
+server_port=Port
+server_status=Status
+server_desc=Description
+
+/* Single View */
+tab_console=Console
+tab_conf=Config
+tab_files=Files
+tab_backup=Backups
+
+c_cmd=Command
+c_cmd_send=Execute
+c_empty=Console Empty
+
+conf_apply=Apply
+
+f_name=Name
+f_date=Date
+f_type=Type
+f_size=Size
+
+backups_add=Create Backup
+backups_date=Date
+backups_size=Size
+backups_desc=Description

@@ -1,0 +1,64 @@
+<div class="container" style="max-width: 1000px;">
+	<br>
+	<nav class="navbar navbar-light bg-light" style="border-radius: 0.25rem;">
+		<div id="btns">
+			
+		</div>
+		<a class="navbar-brand" href="#">Server #{S_ID} <span id="sstatus" class="badge badge-pill badge-light">{S_STATE}</span></a>
+		<a href="?logout=187" class="btn btn-light">{lang:logout}</a>
+	</nav>
+	<br>
+	<div class="card">
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs">
+				<li class="nav-item"> 
+					<a class="nav-link" href="?server={S_ID}"><i class="fa fa-terminal" aria-hidden="true"></i> {lang:tab_console}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&config=0"><i class="fa fa-wrench" aria-hidden="true"></i> {lang:tab_conf}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="?server={S_ID}&files"><i class="fa fa-folder-open" aria-hidden="true"></i> {lang:tab_files}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&backups"><i class="fa fa-archive" aria-hidden="true"></i> {lang:tab_backup}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="card-body">
+		<nav aria-label="breadcrumb" class="pull-left">
+			<ol class="breadcrumb">
+				<!-- 
+					<li class="breadcrumb-item"><a href="#">Home</a></li>
+					<li class="breadcrumb-item"><a href="#">Library</a></li>
+					<li class="breadcrumb-item active" aria-current="page">Data</li>
+				-->
+				{S_FILES_BREADCRUMB}
+		  </ol>
+		</nav>
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead class="thead-light">
+						<tr>
+							<td></td>
+							<td>{lang:f_name}</td>
+							<td>{lang:f_date}</td>
+							<td>{lang:f_type}</td>
+							<td>{lang:f_size}</td>
+						</tr>
+					</thead>
+					<tbody>
+						{S_FILES}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/assets/dargen-mgmt.js"></script>
+<script>
+serverview_refresh({S_ID});
+setInterval(function() {
+	serverview_refresh({S_ID});
+}, 1000);
+</script>

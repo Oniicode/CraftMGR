@@ -1,0 +1,81 @@
+<div class="container" style="max-width: 1000px;">
+	<br>
+	<nav class="navbar navbar-light bg-light" style="border-radius: 0.25rem;">
+		<div id="btns">
+			
+		</div>
+		<a class="navbar-brand" href="#">Server #{S_ID} <span id="sstatus" class="badge badge-pill badge-light">{S_STATE}</span></a>
+		<a href="?logout=187" class="btn btn-light">{lang:logout}</a>
+	</nav>
+	<div class="modal fade" id="mkbackup" tabindex="-1" role="dialog" aria-labelledby="lbl_create" aria-hidden="true">
+		<div class="modal-dialog modal-lg" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="lbl_create">{lang:backups_add}</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-9">
+							<input id="mkbackup-desc" class="form-control" value="backup_{curdate}" required/>
+						</div>
+						<div class="col-md-3">
+							<button data-dismiss="modal" id="btn-mkbackup" class="btn btn-block btn-primary"><i class="fa fa-plus" aria-hidden="true"></i> Erstellen</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<br>
+	<div class="card">
+		<div class="card-header">
+			<ul class="nav nav-tabs card-header-tabs">
+				<li class="nav-item"> 
+					<a class="nav-link" href="?server={S_ID}"><i class="fa fa-terminal" aria-hidden="true"></i> {lang:tab_console}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&config=0"><i class="fa fa-wrench" aria-hidden="true"></i> {lang:tab_conf}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="?server={S_ID}&files"><i class="fa fa-folder-open" aria-hidden="true"></i> {lang:tab_files}</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link active" href="?server={S_ID}&backups"><i class="fa fa-archive" aria-hidden="true"></i> {lang:tab_backup}</a>
+				</li>
+			</ul>
+		</div> 
+		<div class="card-body">
+			<button class="btn btn-primary" data-toggle="modal" data-target="#mkbackup">{lang:backups_add}</button>
+			<div class="table-responsive">
+				<table class="table table-hover">
+					<thead class="thead-light">
+						<tr>
+							<td></td>
+							<td>{lang:backups_date}</td> 
+							<td>{lang:backups_size}</td>
+							<td>{lang:backups_desc}</td>
+							<td></td>
+						</tr>
+					</thead>
+					<tbody>
+						{S_BACKUPS}
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/assets/dargen-mgmt.js"></script>
+<script>
+serverview_refresh({S_ID});
+setInterval(function() {
+	serverview_refresh({S_ID});
+}, 1000);
+
+document.getElementById('btn-mkbackup').onclick = function() {
+	server_mkbackup({S_ID}, document.getElementById('mkbackup-desc').value);
+};
+</script>
